@@ -1,0 +1,252 @@
+{
+	"info": {
+		"_postman_id": "c66390b4-df31-4a5b-93a7-40c8671ab669",
+		"name": "blog-task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "27752549"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "testuser",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "test",
+							"type": "text"
+						},
+						{
+							"key": "phoneNumber",
+							"value": "8589898795",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "test@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "photo",
+							"type": "file",
+							"src": "/Users/sangeethkumarpg/Desktop/vishnu-cropped.jpeg"
+						}
+					]
+				},
+				"url": "http://localhost:5000/register"
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\":\"test@gmail.com\",\n    \"password\":\"test\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:5000/login"
+			},
+			"response": []
+		},
+		{
+			"name": "profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzUyZDA4Yjk2NDRlNjA5MzdhMzdhNGEiLCJpYXQiOjE3MzM0ODA1OTR9.nHxj9MBYSB4KFexVTyeqVRSxSixOsLdgkNpRF8VzSmI"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:5000/profile"
+			},
+			"response": []
+		},
+		{
+			"name": "update-profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzUyZDA4Yjk2NDRlNjA5MzdhMzdhNGEiLCJpYXQiOjE3MzM0ODA1OTR9.nHxj9MBYSB4KFexVTyeqVRSxSixOsLdgkNpRF8VzSmI"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"briefDescription\":\"This a test brief description\",\n    \"detailedDescription\":\"This is a sample of detailed description for the user profile.\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:5000/profile"
+			},
+			"response": []
+		},
+		{
+			"name": "delete-profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzUyZDA4Yjk2NDRlNjA5MzdhMzdhNGEiLCJpYXQiOjE3MzM0ODA1OTR9.nHxj9MBYSB4KFexVTyeqVRSxSixOsLdgkNpRF8VzSmI"
+					}
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:5000/profile"
+			},
+			"response": []
+		},
+		{
+			"name": "add-blog",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzUyZDJlMzIxYzA1YzZhMWE1NWRlNzkiLCJpYXQiOjE3MzM0ODExOTJ9.DylJLD444Ywe002K0Y0TiT1gpX_7c2UoxnhxHuWthvI"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "sample post",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "Sample description",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/Users/sangeethkumarpg/Desktop/20240427_174801.jpg"
+						}
+					]
+				},
+				"url": "http://localhost:5000/blog"
+			},
+			"response": []
+		},
+		{
+			"name": "all-blogs",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzUyZDJlMzIxYzA1YzZhMWE1NWRlNzkiLCJpYXQiOjE3MzM0ODExOTJ9.DylJLD444Ywe002K0Y0TiT1gpX_7c2UoxnhxHuWthvI"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:5000/blog"
+			},
+			"response": []
+		},
+		{
+			"name": "update-blog",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzUyZDJlMzIxYzA1YzZhMWE1NWRlNzkiLCJpYXQiOjE3MzM0ODExOTJ9.DylJLD444Ywe002K0Y0TiT1gpX_7c2UoxnhxHuWthvI"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "updated title",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "description",
+							"value": "updated description",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/Users/sangeethkumarpg/Desktop/20241108_153200-removebg-preview.jpeg"
+						},
+						{
+							"key": "id",
+							"value": "6752d6fd4571837f2e662c61",
+							"type": "text"
+						}
+					]
+				},
+				"url": "http://localhost:5000/blog/"
+			},
+			"response": []
+		},
+		{
+			"name": "delete-blog",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzUyZDJlMzIxYzA1YzZhMWE1NWRlNzkiLCJpYXQiOjE3MzM0ODExOTJ9.DylJLD444Ywe002K0Y0TiT1gpX_7c2UoxnhxHuWthvI"
+					}
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\":\"6752d6fd4571837f2e662c61\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:5000/blog"
+			},
+			"response": []
+		},
+		{
+			"name": "like-blog",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzUyZDJlMzIxYzA1YzZhMWE1NWRlNzkiLCJpYXQiOjE3MzM0ODExOTJ9.DylJLD444Ywe002K0Y0TiT1gpX_7c2UoxnhxHuWthvI"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"url": "http://localhost:5000/blog/6752dba8b19dd37c951b4f40/like"
+			},
+			"response": []
+		}
+	]
+}
